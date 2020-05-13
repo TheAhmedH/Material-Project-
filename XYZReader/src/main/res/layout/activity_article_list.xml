@@ -1,4 +1,4 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,36 +14,33 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:clipToPadding="false"
-            android:scrollbarStyle="outsideOverlay"
-            android:paddingTop="116dp"
             android:paddingLeft="@dimen/list_side_margin"
+            android:paddingTop="70dp"
             android:paddingRight="@dimen/list_side_margin"
-            android:paddingBottom="28dp" />
+            android:paddingBottom="28dp"
+            android:scrollbarStyle="outsideOverlay" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
-    <FrameLayout
-        android:id="@+id/toolbar_container"
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="112dp"
-        android:background="?colorPrimary"
-        android:elevation="8dp">
+        android:layout_height="?android:attr/actionBarSize">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
-            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/list_toolbar_side_margin"
             android:layout_marginRight="@dimen/list_toolbar_side_margin"
-            android:layout_width="match_parent"
-            android:layout_height="?actionBarSize"
-            android:layout_gravity="bottom">
+            android:background="@color/dark_black_background"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
             <ImageView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:src="@drawable/logo"
-                android:contentDescription="@string/app_name" />
-
+                android:layout_marginHorizontal="@dimen/detail_body_bottom_margin"
+                android:contentDescription="@string/image_view_list"
+                android:src="@drawable/logo" />
         </androidx.appcompat.widget.Toolbar>
-    </FrameLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
-</FrameLayout>
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

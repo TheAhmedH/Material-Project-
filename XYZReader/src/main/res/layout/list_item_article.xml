@@ -1,51 +1,71 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginLeft="4dp"
-    android:layout_marginRight="4dp"
-    android:layout_marginTop="4dp"
+    android:layout_margin="5dp"
     android:layout_marginBottom="4dp"
     android:clickable="true"
+    android:elevation="3dp"
     android:focusable="true"
-    android:foreground="?selectableItemBackground">
+    android:foreground="?selectableItemBackground"
+    app:cardCornerRadius="5dp">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:backgroundTint="@color/cardview_light_background"
         android:orientation="vertical">
 
         <!--suppress AndroidLintContentDescription -->
         <com.example.xyzreader.ui.DynamicHeightNetworkImageView
             android:id="@+id/thumbnail"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:background="@color/photo_placeholder" />
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/photo_placeholder"
+            android:scaleType="centerCrop"
+            tools:src="@drawable/logo" />
 
-        <TextView
-            android:id="@+id/article_title"
-            style="@style/TextAppearance.AppCompat.Subhead"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingTop="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="4dp"
-            android:textColor="@color/ltgray"
-            android:ellipsize="end"
-            android:maxLines="4" />
+            android:layout_below="@id/thumbnail"
+            android:background="@drawable/gradientshape"
+            android:gravity="bottom"
+            android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/article_subtitle"
-            style="@style/TextAppearance.AppCompat.Body1"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:paddingLeft="16dp"
-            android:paddingRight="16dp"
-            android:paddingBottom="16dp"
-            android:textColor="#6000"
-            android:maxLines="2"
-            android:ellipsize="end" />
-    </LinearLayout>
+            <TextView
+                android:id="@+id/article_title"
+                style="@style/TextAppearance.AppCompat.Subhead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/thumbnail"
+                android:ellipsize="end"
+                android:fadingEdge="horizontal"
+                android:gravity="bottom"
+                android:maxLines="4"
+                android:paddingLeft="16dp"
+                android:paddingTop="10dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="4dp"
+                android:textColor="@color/detail_view_text_color"
+                android:textStyle="bold"
+                tools:text="Book Title" />
+
+            <TextView
+                android:id="@+id/article_subtitle"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/article_title"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingBottom="16dp"
+                android:textColor="#6000"
+                tools:text="Book Author Info" />
+        </LinearLayout>
+    </RelativeLayout>
 
 </androidx.cardview.widget.CardView>
