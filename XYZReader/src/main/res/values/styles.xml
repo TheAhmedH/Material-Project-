@@ -22,6 +22,8 @@
 
     <style name="Theme.Bacon.Detail">
         <item name="android:statusBarColor">#03E7F3E7</item>
+        <item name="colorPrimary">#16E7F3E7</item>
+        <item name="colorAccent">#746C7E6C</item>
     </style>
 
     <style name="BodyText" parent="TextAppearance.AppCompat">
