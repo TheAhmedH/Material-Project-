@@ -23,6 +23,7 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
+        android:elevation="6dp"
         android:layout_height="?android:attr/actionBarSize">
 
         <androidx.appcompat.widget.Toolbar
